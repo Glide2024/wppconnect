@@ -5,14 +5,10 @@ services:
     branch: main
     plan: free
     autoDeploy: true
-    disk:
-      name: wppconnect-data
-      mountPath: /data
-      sizeGB: 1
     envVars:
       - key: SERVER_PORT
         value: "21465"
       - key: SESSION_DATA_PATH
-        value: "/data"
+        value: "/tmp" # ephemeral, will reset on restart
       - key: TOKEN
         value: "mysecrettoken"
