@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: wppconnect-api
+    env: docker
+    branch: main
+    plan: free
+    autoDeploy: true
+    disk:
+      name: wppconnect-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: SERVER_PORT
+        value: "21465"
+      - key: SESSION_DATA_PATH
+        value: "/data"
+      - key: TOKEN
+        value: "mysecrettoken"
